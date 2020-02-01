@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
+
+ <style>
+  #mapid { height: 500px; width: 800px }
+</style>
+
+    <title>Your Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='sub-chargepoints.js') }}"></script>
+  </head>
+  <body>
+    Welcome to Your Application<br><br>
+    <div id="mapid"></div>
+  </body>
+
+<script>
+
+  center_sm_lat= 37.550222;
+    center_sm_long= -122.298574;
+    var mymap = L.map('mapid').setView([center_sm_lat, center_sm_long], 12);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    accessToken: 'pk.eyJ1IjoiY2JlbnNvbiIsImEiOiJjaWt6bzN6bHMxNzIydTRtM3Z5MzFocGRpIn0.TWWeQUrzxviMwUr_Aro37Q'
+}).addTo(mymap);
+
+for (i=0; i<chargepoints.length; i++)
+    {
+    var marker = L.marker([chargepoints[i]['Latitude'], chargepoints[i]['Longitude']]).addTo(mymap);
+      marker.bindPopup(chargepoints[i]['Title']);
+    }
+
+var col = ["#ff0000", "#DD0000", "#AA0000", 
+            "#880000", "#660000", "#440000", 
+            "#0000FF","#0000DD", "#0000AA", "#000088", 
+            "#000066", "#000044"]
+
+for (i = 0; i<10; i++)
+    for (j = 0; j<10; j++) 
+    {
+      var lat = center_sm_lat-0.05 + i*0.01;
+      var lng = center_sm_long-0.05 + j*0.01;
+      var bounds = [[lat, lng], [lat+0.01, lng+0.01]];
+      // create an orange rectangle
+      r = Math.floor((Math.random() * 12));
+      rect = L.rectangle(bounds, {color: col[r], fillOpacity: 0.5, weight: 1}).addTo(mymap);
+      rect.bindPopup("Nearest Charger: 1.2 Miles<br>Ave. Income: $37,000<br>EVs: 3%")
+    }
+
+
+
+
+</script>
+  </html>
