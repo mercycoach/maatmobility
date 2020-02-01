@@ -1,0 +1,38 @@
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+#title {
+  font-size: 20px;
+  padding-top: 22%;
+  padding-bottom: 15%;
+  margin-left: 12%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 15%;
+  background-color: #fafcfc;
+}
+
+.right {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  height: 20%;
+  background-color: #7ca1eb
+}
+
+
+#mapid {
+      height: 100%;
+      width: 60%;
+      padding: 10px;
+}
