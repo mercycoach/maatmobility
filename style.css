@@ -4,9 +4,9 @@
 
 #title {
   font-size: 20px;
-  padding-top: 22%;
+  padding-top: 10%;
   padding-bottom: 15%;
-  margin-left: 12%;
+  margin-left: 25%;
 }
 
 .container {
@@ -19,18 +19,13 @@
   background-color: #fafcfc;
 }
 
-.menu {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-}
 .evCharger {
-  /* margin-top: 15%; */
-  margin-left: 5%;
+  margin-top: 10%;
+  margin-left: 33%;
 }
 
 .scale {
-  margin-left: 20%;
+  margin-left: 25%;
   width: 60px;
   /* border: 1px solid black; */
 }
@@ -99,6 +94,75 @@
   padding: 1px;
   opacity: 0.5
 }
+
+#k {
+  background-color: #440000;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#l {
+  background-color: #0000FF;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#m {
+  background-color: #0000EE;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#n {
+  background-color: #0000dd;
+  padding: 1px;
+  opacity: 0.5
+}
+
+
+#o {
+  background-color: #0000cc;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#p {
+  background-color: #0000bb;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#q {
+  background-color: #0000AA;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#r {
+  background-color: #000088;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#s {
+  background-color: #000077;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#u {
+  background-color: #000066;
+  padding: 1px;
+  opacity: 0.5
+}
+
+#v {
+  background-color: #000066;
+  padding: 1px;
+  opacity: 0.5
+}
+
+
 
 .right {
   width: 25%;
